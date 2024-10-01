@@ -7,12 +7,12 @@ function showPose(index) {
     const pose = data[index];
 
     document.querySelector('.image').innerHTML = `<img src="${pose.image}" alt="${pose.sanskrit_name}" />`;
-    document.querySelector('.sanKName').innerHTML = `<span class="devanagari">${pose.sanskrit_name}</span>`;
+    document.querySelector('.sanKName').textContent = pose.sanskrit_name;
     document.querySelector('.enName').textContent = pose.english_name;
-    document.querySelector('.description').innerHTML = sanskritWords(pose.description);
-    document.querySelector('.time').textContent = `Time: ${pose.time}`;
-    document.querySelector('.benefits').innerHTML = `लाभाः (Lābhāḥ): ${sanskritWords(pose.benefits)}`;
-    document.querySelector('.target').textContent = `Target: ${pose.target}`;
+    document.querySelector('.description').innerHTML = `<h3>Description</h3>${sanskritWords(pose.description)}`;
+    document.querySelector('.time').innerHTML = `<h3>Time</h3>${pose.time}`;
+    document.querySelector('.benefits').innerHTML = `<h3>लाभाः (Lābhāḥ)</h3>${sanskritWords(pose.benefits)}`;
+    document.querySelector('.target').innerHTML = `<h3>Target</h3>${pose.target}`;
 
     const chant = getChantForPose(pose.sanskrit_name);
     document.querySelector('.chant').innerHTML = `
