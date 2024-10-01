@@ -33,7 +33,7 @@ body {
 }
 
 .prev, .next {
-  background-color: #4CAF50;
+  background-color: black;
   color: white;
   border: none;
   padding: 10px 15px;
