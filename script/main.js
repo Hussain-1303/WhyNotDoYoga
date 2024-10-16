@@ -1,3 +1,6 @@
+//raw JSON API from priyangsubanerjee 
+//cred : https://github.com/priyangsubanerjee/yogism
+
 let yogaData = []; // Fetched data to be stored here
 let currentIndex = 0; // First pose
 let showSanskritDescription = false;
@@ -18,9 +21,25 @@ function fetchPoseData() {
     .then(response => response.json())
     .then(jsonData => {
         yogaData = jsonData; // Assign fetched data to the yogaData array
+        populateNavigation();
         showPose(currentIndex); // Display the first pose
     })
     .catch(error => console.error('Error fetching the JSON:', error));
+}
+
+function populateNavigation() {
+    const nav = document.getElementById('poseNavigation');
+    nav.innerHTML = ''; // Clear existing items
+    yogaData.forEach((pose, index) => {
+        const li = document.createElement('li');
+        li.textContent = pose.english_name; // Display English name
+        li.addEventListener('click', () => {
+            currentIndex = index; // Set the current index to the clicked pose
+            showPose(currentIndex); // Show the selected pose
+            restart(); // Restart the timer
+        });
+        nav.appendChild(li); // Add the list item to the navigation
+    });
 }
 
 // Show pose details
