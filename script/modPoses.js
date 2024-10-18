@@ -1,6 +1,5 @@
-let data = []; // Declare the data array
+let data = []; 
 
-        // Function to fetch pose data
         async function fetchPoseData() {
             const yogaUrl = "https://raw.githubusercontent.com/Hussain-1303/yogism/refs/heads/master/finalPosesv2.json";
 
@@ -41,5 +40,4 @@ let data = []; // Declare the data array
             }
         }
 
-        // Fetch the data when the page loads
         fetchPoseData();
