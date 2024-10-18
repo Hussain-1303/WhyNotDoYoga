@@ -16,7 +16,10 @@
     </div>
     
     <span class="open-pose-menu" onclick="openNav()">☰</span> 
-    
+
+    <div class="toggle-container">
+        <button id="languageToggle">Switch to Sanskrit</button>
+    </div>
     
     <div id="main">
         <div class="container">
@@ -29,34 +32,33 @@
                 <div class="sanKName"></div>
                 <div class="enName"></div>
             </div>
+            <div class="steps">
+                <ol class="eng_steps"></ol>
+                <ol class="sanskrit_steps" style="display: none;"></ol> 
+            </div>
+            <div class="time"></div>
+            <div id="timer">00:00</div>
+            <div class="button-container">
+                <button class="control-button resume" onclick="resume()">&#9654; Resume</button>
+                <button class="control-button pause" onclick="pause()">&#10074;&#10074; Pause</button>
+                <button class="control-button restart" onclick="restart()">&#x21BA; Restart</button>
+            </div>            
             <div class="description">
-                <button class="toggleDescription">Show Sanskrit Description</button>
                 <div class="eng_description"></div>
                 <div class="sanskrit_description" style="display: none;"></div>
             </div>
             <div class="benefits">
-                <button class="toggleBenefits">Show Sanskrit Benefits</button>
                 <div class="eng_benefits"></div>
                 <div class="sanskrit_benefits" style="display: none;"></div>
             </div>
-            <div class="time"></div>
-            <div id="timer">00:00</div>
-            <button onclick="resume()">Resume</button>
-            <button onclick="pause()">Pause</button>
-            <button onclick="restart()">Restart</button>
-            <div class="steps">
-                <button class="toggleSteps">Show Sanskrit Steps</button>
-                <div class="eng_steps"></div>
-                <div class="sanskrit_steps" style="display: none;"></div>
-            </div>
+            
             <div class="bottom-section">
                 <div class="chant">
-                    <button class="toggleChant">Show Sanskrit Mantra</button>
                     <div class="chant_english"></div>
                     <div class="chant_sanskrit" style="display: none;"></div>
                 </div>
             </div>
         </div>
-    </div>
+    </div>    
 </body>
 </html>
