@@ -8,7 +8,6 @@ let data = []; // Declare the data array
                 const response = await fetch(yogaUrl);
                 data = await response.json();
 
-                // Remove 'variations' from each pose
                 data.forEach(pose => {
                     delete pose.variations;
                     delete pose.category;

@@ -18,13 +18,13 @@ function fetchPoseData() {
     const yogaUrl = "https://raw.githubusercontent.com/Hussain-1303/yogism/refs/heads/master/finalPosesv2.json";
 
     fetch(yogaUrl)
-    .then(response => response.json())
-    .then(jsonData => {
-        yogaData = jsonData; // Assign fetched data to the yogaData array
-        populateNavigation();
-        showPose(currentIndex); // Display the first pose
-    })
-    .catch(error => console.error('Error fetching the JSON:', error));
+        .then(response => response.json())
+        .then(jsonData => {
+            yogaData = jsonData; // Assign fetched data to the yogaData array
+            populateNavigation();
+            showPose(currentIndex); // Display the first pose
+        })
+        .catch(error => console.error('Error fetching the JSON:', error));
 }
 
 function populateNavigation() {
@@ -32,14 +32,30 @@ function populateNavigation() {
     nav.innerHTML = ''; // Clear existing items
     yogaData.forEach((pose, index) => {
         const li = document.createElement('li');
-        li.textContent = pose.english_name; // Display English name
+        li.textContent = pose.sanskrit_name; // Display the Sanskrit name
+        li.style.cursor = 'pointer'; // Change cursor to pointer for better UX
         li.addEventListener('click', () => {
-            currentIndex = index; // Set the current index to the clicked pose
+            currentIndex = index;
             showPose(currentIndex); // Show the selected pose
             restart(); // Restart the timer
+            closeNav(); // Close the navigation after selection
         });
         nav.appendChild(li); // Add the list item to the navigation
     });
+}
+
+// Open the side navigation
+function openNav() {
+    document.getElementById("mySidenav").style.width = "250px";
+    document.getElementById("main").style.marginLeft = "250px";
+    document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+}
+
+// Close the side navigation
+function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+    document.getElementById("main").style.marginLeft = "0";
+    document.body.style.backgroundColor = "white";
 }
 
 // Show pose details

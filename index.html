@@ -8,47 +8,53 @@
     <script src="script/main.js" defer></script>
 </head>
 <body>
-    <nav>
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
         <ul id="poseNavigation">
-            <!-- Dynamic links will be populated here -->
+
         </ul>
-    </nav>
+    </div>
     
-    <div class="container">
-        <div class="image"></div>
-        <div class="navigation-buttons">
-            <a class="prev" onclick="plusPose(-1)">&#10094; पूर्वतनम्‌</a>
-            <a class="next" onclick="plusPose(1)">अग्रिम &#10095;</a>
-        </div>
-        <div class="name">
-            <div class="sanKName"></div>
-            <div class="enName"></div>
-        </div>
-        <div class="description">
-            <button class="toggleDescription">Show Sanskrit Description</button>
-            <div class="eng_description"></div>
-            <div class="sanskrit_description" style="display: none;"></div>
-        </div>
-        <div class="benefits">
-            <button class="toggleBenefits">Show Sanskrit Benefits</button>
-            <div class="eng_benefits"></div>
-            <div class="sanskrit_benefits" style="display: none;"></div>
-        </div>
-        <div class="time"></div>
-        <div id="timer">00:00</div>
-        <button onclick="resume()">Resume</button>
-        <button onclick="pause()">Pause</button>
-        <button onclick="restart()">Restart</button>
-        <div class="steps">
-            <button class="toggleSteps">Show Sanskrit Steps</button>
-            <div class="eng_steps"></div>
-            <div class="sanskrit_steps" style="display: none;"></div>
-        </div>
-        <div class="bottom-section">
-            <div class="chant">
-                <button class="toggleChant">Show Sanskrit Mantra</button>
-                <div class="chant_english"></div>
-                <div class="chant_sanskrit" style="display: none;"></div>
+    <span class="open-pose-menu" onclick="openNav()">☰</span> 
+    
+    
+    <div id="main">
+        <div class="container">
+            <div class="image"></div>
+            <div class="navigation-buttons">
+                <a class="prev" onclick="plusPose(-1)">&#10094; पूर्वतनम्‌</a>
+                <a class="next" onclick="plusPose(1)">अग्रिम &#10095;</a>
+            </div>
+            <div class="name">
+                <div class="sanKName"></div>
+                <div class="enName"></div>
+            </div>
+            <div class="description">
+                <button class="toggleDescription">Show Sanskrit Description</button>
+                <div class="eng_description"></div>
+                <div class="sanskrit_description" style="display: none;"></div>
+            </div>
+            <div class="benefits">
+                <button class="toggleBenefits">Show Sanskrit Benefits</button>
+                <div class="eng_benefits"></div>
+                <div class="sanskrit_benefits" style="display: none;"></div>
+            </div>
+            <div class="time"></div>
+            <div id="timer">00:00</div>
+            <button onclick="resume()">Resume</button>
+            <button onclick="pause()">Pause</button>
+            <button onclick="restart()">Restart</button>
+            <div class="steps">
+                <button class="toggleSteps">Show Sanskrit Steps</button>
+                <div class="eng_steps"></div>
+                <div class="sanskrit_steps" style="display: none;"></div>
+            </div>
+            <div class="bottom-section">
+                <div class="chant">
+                    <button class="toggleChant">Show Sanskrit Mantra</button>
+                    <div class="chant_english"></div>
+                    <div class="chant_sanskrit" style="display: none;"></div>
+                </div>
             </div>
         </div>
     </div>

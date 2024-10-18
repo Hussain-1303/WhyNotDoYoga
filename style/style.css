@@ -1,104 +1,179 @@
 body {
-  font-family: 'Arial', sans-serif;
-  background-color: #f0f0f0;
-  margin: 0;
-  padding: 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
+    font-family: 'Arial', sans-serif;
+    background-color: #e8f5e9;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
 }
 
 .container {
-  background-color: white;
-  padding: 30px;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  max-width: 800px;
-  width: 100%;
-  text-align: center;
+    background-color: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    width: 100%;
+    text-align: center;
 }
 
 .image img {
-  width: 100%;
-  max-width: 100%;
-  height: auto;
-  object-fit: cover;
-  border-radius: 5px;
-  margin-bottom: 20px;
+    width: 300px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 20px;
 }
 
 .navigation-buttons {
-  display: flex; 
-  justify-content: space-between;
-  margin-bottom: 20px; 
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
 }
 
-.prev, .next {
-  background-color: black;
-  color: white;
-  border: none;
-  padding: 10px 15px;
-  margin: 0 10px;
-  text-decoration: none;
-  font-size: 16px;
-  cursor: pointer;
-  border-radius: 5px;
+.prev,
+.next {
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    margin: 0 10px;
+    text-decoration: none;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 25px;
+    transition: background-color 0.3s, transform 0.2s;
 }
 
-.prev:hover, .next:hover {
-  background-color: #45a049;
+.prev:hover,
+.next:hover {
+    background-color: #45a049;
+    transform: translateY(-2px);
 }
 
 .sanKName {
-  font-size: 24px;
-  font-weight: bold;
-  color: #333;
-  margin-bottom: 5px;
+    font-size: 30px;
+    font-weight: bold;
+    color: #2e7d32;
+    margin-bottom: 5px;
 }
 
 .enName {
-  font-size: 18px;
-  color: #666;
-  margin-bottom: 20px;
+    font-size: 24px;
+    color: #666;
+    margin-bottom: 20px;
 }
 
-.description, .benefits, .time, .target {
-  margin-bottom: 15px;
-  line-height: 1.5;
-  text-align: left;
+.description,
+.benefits,
+.time {
+    margin-bottom: 15px;
+    line-height: 1.6;
+    text-align: left;
 }
 
 .bottom-section {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
 }
 
-.chant, .ayurveda {
-  flex-basis: 48%;
-  text-align: left;
+.chant,
+.ayurveda {
+    flex-basis: 48%;
+    text-align: left;
+}
+
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #3e8e41;
+    overflow-x: hidden;
+    padding-top: 60px;
+    transition: 0.5s;
+}
+
+.sidenav a {
+    padding: 10px 20px;
+    text-decoration: none;
+    font-size: 20px;
+    color: #f1f1f1;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidenav a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+    color: #f1f1f1;
+}
+
+#main {
+    transition: margin-left .5s;
+    padding: 20px;
+}
+
+.open-pose-menu {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-size: 24px;
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s;
+}
+
+.open-pose-menu:hover {
+    background-color: rgba(255, 255, 255, 1);
+}
+
+@media screen and (max-height: 450px) {
+    .sidenav {
+        padding-top: 15px;
+    }
+
+    .sidenav a {
+        font-size: 18px;
+    }
 }
 
 @media (max-width: 600px) {
-  .container {
-      padding: 20px;
-  }
-  
-  .sanKName {
-      font-size: 20px;
-  }
-  
-  .enName {
-      font-size: 16px;
-  }
+    .container {
+        padding: 20px;
+    }
 
-  .bottom-section {
-      flex-direction: column;
-  }
+    .sanKName {
+        font-size: 22px;
+    }
 
-  .chant, .ayurveda {
-      flex-basis: 100%;
-      margin-bottom: 15px;
-  }
+    .enName {
+        font-size: 18px;
+    }
+
+    .bottom-section {
+        flex-direction: column;
+    }
+
+    .chant,
+    .ayurveda {
+        flex-basis: 100%;
+        margin-bottom: 15px;
+    }
 }
