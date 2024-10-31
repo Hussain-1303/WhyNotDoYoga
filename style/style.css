@@ -19,12 +19,13 @@ body {
     text-align: center;
     position: relative;
     border: 1px solid #ccc;
-    margin-top: 40px;
+    margin-top: 10px;
 }
 
 .image img {
-    width: 500px;
-    height: 300px;
+    width: 100%;
+    max-width: 500px;
+    height: auto;
     object-fit: cover;
     border-radius: 10px;
     margin-bottom: 20px;
@@ -33,7 +34,7 @@ body {
 .navigation-buttons {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
 .prev, .next {
@@ -62,9 +63,10 @@ body {
 }
 
 .enName {
-    font-size: 24px;
-    color: #666;
-    margin-bottom: 20px;
+    font-size: 30px;
+    font-weight: bold;
+    color: #2e7d32;
+    margin-bottom: 5px;
 }
 
 .description, .benefits, .time, .steps {
@@ -164,11 +166,6 @@ body {
     background-color: #45a049;
 }
 
-
-#languageToggle:hover {
-    background-color: #45a049;
-}
-
 #poseNavigation {
     list-style-type: none;
     padding: 0;
@@ -240,5 +237,39 @@ body {
     .chant, .ayurveda {
         flex-basis: 100%;
         margin-bottom: 15px;
+    }
+
+    .navigation-buttons {
+        flex-direction: column;
+    }
+
+    .prev, .next {
+        width: 100%;
+        margin-bottom: 10px;
+        font-size: 16px;
+        padding: 10px;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 25px;
+    }
+
+    .image img {
+        width: 100%;
+    }
+
+    .sanKName, .enName {
+        font-size: 24px;
+    }
+
+    .prev, .next {
+        padding: 10px 15px;
+        font-size: 16px;
+    }
+
+    .chant, .ayurveda {
+        flex-basis: 100%;
     }
 }
